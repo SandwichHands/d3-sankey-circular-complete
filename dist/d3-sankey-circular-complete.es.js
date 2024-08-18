@@ -174,6 +174,15 @@ function sankeyCircular () {
     return graph;
   } // end of sankeyCircular function
 
+  // sort links' breadth (ie top to bottom in a column), based on their source nodes' breadths
+  function ascendingSourceBreadth(a, b) {
+    return ascendingBreadth(a.source, b.source) || a.index - b.index;
+  }
+
+  // sort links' breadth (ie top to bottom in a column), based on their target nodes' breadths
+  function ascendingTargetBreadth(a, b) {
+    return ascendingBreadth(a.target, b.target) || a.index - b.index;
+  }
 
   // sort nodes' breadth (ie top to bottom in a column)
   // if both nodes have circular links, or both don't have circular links, then sort by the top (y0) of the node
@@ -189,17 +198,6 @@ function sankeyCircular () {
         return 1;
       }
     }
-  }
-
-  
-  // sort links' breadth (ie top to bottom in a column), based on their source nodes' breadths
-  function ascendingSourceBreadth(a, b) {
-    return ascendingBreadth(a.source, b.source) || a.index - b.index;
-  }
-
-  // sort links' breadth (ie top to bottom in a column), based on their target nodes' breadths
-  function ascendingTargetBreadth(a, b) {
-    return ascendingBreadth(a.target, b.target) || a.index - b.index;
   }
 
   // Set the sankeyCircular parameters
