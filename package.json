@@ -2,14 +2,14 @@
   "name": "d3-sankey-circular-complete",
   "version": "0.0.1",
   "description": "D3 sankey with circular links",
-  "author": "Tom Shanley",
+  "author": "Sandwich Hands",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomshanley/d3-sankey-circular.git"
+    "url": "git+https://github.com/SandwichHands/d3-sankey-circular-complete.git"
   },
-  "main": "dist/d3-sankey-circular.js",
-  "module": "dist/d3-sankey-circular.es.js",
+  "main": "dist/d3-sankey-circular-complete.js",
+  "module": "dist/d3-sankey-circular-complete.es.js",
   "dependencies": {
     "d3-array": "^1.2.1",
     "d3-collection": "^1.0.4",
@@ -58,7 +58,7 @@
     "d3"
   ],
   "bugs": {
-    "url": "https://github.com/tomshanley/d3-sankey-circular/issues"
+    "url": "https://github.com/SandwichHands/d3-sankey-circular-complete/issues"
   },
-  "homepage": "https://github.com/tomshanley/d3-sankey-circular#readme"
+  "homepage": "https://github.com/SandwichHands/d3-sankey-circular-complete#readme"
 }
