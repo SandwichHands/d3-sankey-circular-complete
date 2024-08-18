@@ -1,6 +1,6 @@
 {
   "name": "d3-sankey-circular-complete",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "D3 sankey with circular links",
   "author": "Sandwich Hands",
   "license": "MIT",

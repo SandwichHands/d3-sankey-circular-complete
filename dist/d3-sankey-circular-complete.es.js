@@ -172,12 +172,21 @@ function sankeyCircular () {
     addCircularPathData(graph, circularLinkGap, y1, id);
 
     return graph;
-  } 
-  // end of sankeyCircular function
- // sort nodes' breadth (ie top to bottom in a column)
+  } // end of sankeyCircular function
+
+  // sort links' breadth (ie top to bottom in a column), based on their source nodes' breadths
+  function ascendingSourceBreadth(a, b) {
+    return ascendingBreadth(a.source, b.source) || a.index - b.index;
+  }
+
+  // sort links' breadth (ie top to bottom in a column), based on their target nodes' breadths
+  function ascendingTargetBreadth(a, b) {
+    return ascendingBreadth(a.target, b.target) || a.index - b.index;
+  }
+
+  // sort nodes' breadth (ie top to bottom in a column)
   // if both nodes have circular links, or both don't have circular links, then sort by the top (y0) of the node
   // else push nodes that have top circular links to the top, and nodes that have bottom circular links to the bottom
-  
   function ascendingBreadth(a, b) {
     if (a.partOfCycle === b.partOfCycle) {
       if (nodeSort) return nodeSort(a, b) || a.y0 - b.y0;
@@ -190,18 +199,6 @@ function sankeyCircular () {
       }
     }
   }
-
-  // sort links' breadth (ie top to bottom in a column), based on their source nodes' breadths
-  function ascendingSourceBreadth(a, b) {
-    return ascendingBreadth(a.source, b.source) || a.index - b.index;
-  }
-
-  // sort links' breadth (ie top to bottom in a column), based on their target nodes' breadths
-  function ascendingTargetBreadth(a, b) {
-    return ascendingBreadth(a.target, b.target) || a.index - b.index;
-  }
-
- 
 
   // Set the sankeyCircular parameters
   // nodeID, nodeAlign, nodeWidth, nodePadding, nodes, links, size, extent, iterations, nodePaddingRatio, circularLinkGap
